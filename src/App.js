@@ -8,15 +8,22 @@ class App extends Component {
     super();
 
     this.state = {
-      nonsters: [
+      monsters: [
         {
+          key: 1,
           name: "Atul",
         },
         {
+          key: 2,
           name: "Chhotu",
         },
         {
+          key: 3,
           name: "Jacky",
+        },
+        {
+          key: 4,
+          name: "Askary",
         },
       ],
     };
@@ -25,9 +32,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>{this.state.monster1.name}</h1>
-        <h1>{this.state.monster2.name}</h1>
-        <h1>{this.state.monster3.name}</h1>
+        {this.state.monsters.map((monster) => {
+          return (
+            <div key={monster.key}>
+              <h1>{monster.name}</h1>
+            </div>
+          );
+        })}
       </div>
     );
   }
